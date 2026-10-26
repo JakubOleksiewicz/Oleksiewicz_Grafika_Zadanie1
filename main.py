@@ -46,11 +46,28 @@ def display_image(image, grayscale=False):
     plt.show()
 
 
+def process_image(image):
+    height, width = image.shape[:2]
+
+    new_width = width // 2
+    new_height = height // 2
+
+    processed_image = cv2.resize(image, (new_width, new_height))
+    processed_image = cv2.cvtColor(processed_image, cv2.COLOR_BGR2GRAY)
+    processed_image = cv2.rotate(processed_image, cv2.ROTATE_90_CLOCKWISE)
+
+    return processed_image
+
+
 def main():
     try:
         image = load_image(IMAGE_URL)
 
         display_image(image)
+
+        processed_image = process_image(image)
+
+        display_image(processed_image)
 
     except Exception as error:
         print(f"Wystąpił błąd: {error}")
