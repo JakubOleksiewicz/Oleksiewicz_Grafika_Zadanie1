@@ -1,1 +1,2 @@
-# Oleksiewicz_Grafika_Zadanie1
+Jakub Oleksiewicz
+Zadanie 1 - Podstawy przetwarzania obrazów cyfrowych
