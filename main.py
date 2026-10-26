@@ -59,6 +59,13 @@ def process_image(image):
     return processed_image
 
 
+def display_matrix(image):
+    np.set_printoptions(threshold=np.inf, linewidth=120)
+
+    print("\nMacierz obrazu wynikowego:")
+    print(image)
+
+
 def main():
     try:
         image = load_image(IMAGE_URL)
@@ -68,6 +75,7 @@ def main():
         processed_image = process_image(image)
 
         display_image(processed_image)
+        display_matrix(processed_image)
 
     except Exception as error:
         print(f"Wystąpił błąd: {error}")
